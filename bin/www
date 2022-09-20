@@ -7,18 +7,14 @@
 var app = require('../app');
 var debug = require('debug')('myapp:server');
 var http = require('http');
-
-// Importações para gerar servidor HTTPS (prod)
-// const options = {
-//   key: fs.readFileSync(`path/key.pem`),
-//   cert: fs.readFileSync(`path/certificado.pem`)
-// };
-//
-// https.createServer(options, app); //Cria o servidor HTTPS com os certificados
-
 var https = require('https');
 var fs = require(`fs`);
 
+// Importações para gerar servidor HTTPS (prod)
+ const options = {
+   key: fs.readFileSync(__dirname + '/cert/plusoftomni.com.br.key'),
+   cert: fs.readFileSync(__dirname + '/cert/plusoftomni.com.br.crt')
+ };
 
 
 /**
@@ -27,18 +23,22 @@ var fs = require(`fs`);
 
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
-
 /**
  * Create HTTP server.
  */
 
 var server = http.createServer(app);
 
+// Cria o servidor HTTPs
+//var server = https.createServer(options, app); //Cria o servidor HTTPS com os certificados
+
 /**
  * Listen on provided port, on all network interfaces.
  */
 
 server.listen(port);
+console.log('Port',port)
+console.log('Server',server.address())
 server.on('error', onError);
 server.on('listening', onListening);
 

@@ -12,7 +12,7 @@ var Config = nodeJsonDb.Config
 //Quarto argumento = Separador, por padrão '/'
 var db = new JsonDB(new Config("localdb", true, false, '/'));
 
-async function createDB() {
+async function createDBUsers() {
   try {
   
   var usersPath = await db.exists("/users");
@@ -30,7 +30,15 @@ async function createDB() {
   };
 }
 
-createDB()
+createDBUsers()
+
+//Exemplo de AUTH aplicado a todas as requisições nesse source
+// router.use(function(req, res, next) {
+//   if (!req.headers.authorization) {
+//     return res.status(403).json({ error: 'Autorização não enviada!' });
+//   }
+//   next();
+// }); 
 
 //Coleta as configurações do DB Local
 router.post('/getLogin',  async (req, res, next) => {

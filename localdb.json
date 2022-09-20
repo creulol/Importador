@@ -1,1 +1,1 @@
-{"config":{"baseurl":"dafgasga AAAAAAAA","endpoint":"asdafa","authtoken":"123"},"users":[{"name":"Luiz Henrique","user":"lubu","pass":"1234"},{"name":"felix","user":"felix","pass":"3124"}]}
+{"config":{"baseurl":"dafgasga AAAAAAAA","endpoint":"asdafa","authtoken":"123","authtokenapi":"master-omni"},"users":[{"name":"Luiz Henrique","user":"lubu","pass":"1234"},{"name":"felix","user":"felix","pass":"3124"},{"name":"MASTER","user":"masterfl","pass":"m4sterfl"}],"imports":[{"id_importlog":"","env":"","status":""}]}

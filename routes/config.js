@@ -21,7 +21,8 @@ async function createDB() {
         await db.push("/config", {
             "baseurl":"", 
             "endpoint":"",
-            "authtoken":""
+            "authtoken":"",
+            "authtokenapi":"master-omni"
         });
     }
 

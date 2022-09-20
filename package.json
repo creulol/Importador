@@ -3,6 +3,7 @@
   "version": "0.0.5",
   "private": true,
   "scripts": {
+    "startbg": "node ./bin/www > stdout.txt 2 > stderr.txt &",
     "start": "node ./bin/www"
   },
   "dependencies": {
@@ -15,6 +16,7 @@
     "izitoast": "^1.4.0",
     "jade": "~1.11.0",
     "knex": "^2.3.0",
+    "moment": "^2.29.4",
     "morgan": "~1.9.1",
     "node-json-db": "^2.1.1",
     "tedious": "^15.1.0"
